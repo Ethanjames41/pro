@@ -1,112 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Welcome to my web development journey!" />
-  <title>BYU-Idaho Web Dev | Journey Launch</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      /* Define a professional color palette */
-      --color-primary: #004488; /* Deep Blue, similar to a school color */
-      --color-accent: #ff8800; /* A contrasting accent color */
-      --color-background: #f4f7f9; /* Light, clean background */
-      --color-text: #333;
-    }
-
-    body {
-      font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
-      background-color: var(--color-background);
-      color: var(--color-text);
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh; /* Use min-height for better content handling */
-      text-align: center;
-      line-height: 1.6;
-    }
-
-    /* --- Container for better content alignment and visual structure --- */
-    .container {
-        background-color: #fff; /* White content box */
-        padding: 40px 60px;
-        border-radius: 12px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Subtle 3D lift */
-        max-width: 700px;
-        margin: 20px;
-    }
-
-    h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: var(--color-primary);
-    }
-
-    /* Added a subtitle for a professional touch */
-    h2 {
-        font-size: 1.4rem;
-        font-weight: 400;
-        color: var(--color-accent);
-        margin-top: 0;
-        margin-bottom: 2rem;
-    }
-
-    p {
-      font-size: 1.15rem;
-      max-width: 100%; /* Relative to the container */
-      margin-bottom: 2rem;
-    }
-
-    a {
-      display: inline-block;
-      margin-top: 0.5rem;
-      background: var(--color-primary);
-      color: #fff;
-      padding: 1rem 2.2rem;
-      border-radius: 6px; /* Slightly less rounded for a professional look */
-      text-decoration: none;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      transition: 0.3s ease-in-out;
-      box-shadow: 0 4px 15px rgba(0, 68, 136, 0.3); /* Shadow for depth */
-    }
-
-    a:hover {
-      background: var(--color-accent); /* Accent color on hover */
-      box-shadow: 0 6px 20px rgba(255, 136, 0, 0.4);
-      transform: translateY(-2px);
-    }
-
-    footer {
-      position: absolute;
-      bottom: 20px;
-      font-size: 0.85rem;
-      opacity: 0.7;
-      color: var(--color-text);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Walker's Portofolio</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to My Web Development Journey</h1>
-        <h2>BYU-Idaho Student Portfolio Launch</h2>
-        <p>
-            This website marks the beginning of my mission to **create, teach, and share knowledge** with people around the world through the power of web development. As a new student, I'm excited to put my learning into practice!
-        </p>
-        <a href="#projects">View My First Projects</a>
+    <div class="navbar">
+        <div class="navdiv">
+            <div class="logo"><a href="index.html">Ethan James W</a></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
     </div>
 
-  <footer>
-    © <span id="year"></span> | Dedicated to Learning and Sharing.
-  </footer>
+    <div class="banner-container">
+        <div class="profile-icon">
+            <img src="image1.jpeg" alt="profile image">
+        </div>
+        <div class="name-container">
+            <h1 class="name">Ethan James Walker</h1>
+        </div>
+        <button class="btn-sand" id="btn-sand">Send a Message</button>
+    </div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+    
+
+<!-- Popup modal -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="form-container" id="form-container">
+    <form class="form">
+      <button class="close-btn" id="closeModalBtn">&times;</button>
+      <h1 id="ethan"></h1>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="textarea">Message</label>
+        <textarea name="textarea" id="textarea" rows="6" required></textarea>
+      </div>
+
+      <button class="btn-sand" type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+    <footer>
+    <div class="footer-content">
+        <p>&copy; 2025 Ethan James Walker. All rights reserved.</p>
+        <ul class="social-links">
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Twitter</a></li>
+        </ul>
+    </div>
+</footer>
+<script src="main.js"></script>
 </body>
 </html>

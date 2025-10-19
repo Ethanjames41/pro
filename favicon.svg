@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="Ethan James Walker favicon">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff0505ff"/>
+      <stop offset="1" stop-color="#097770ff"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- rounded square background -->
+  <rect x="2" y="2" width="60" height="60" rx="10" ry="10" fill="url(#g)" filter="url(#soft)"/>
+
+  <!-- subtle gold accent stripe -->
+  <rect x="6" y="46" width="52" height="4" rx="2" fill="#f1a204ff" opacity="0.9"/>
+
+  <!-- initials: EJ -->
+  <g fill="#ffffffff" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-weight="700" font-size="30" text-anchor="middle" dominant-baseline="central">
+    <text x="32" y="28">EJ</text>
+  </g>
+
+  <!-- small white dot accent (balance) -->
+  <circle cx="50" cy="14" r="2" fill="#ffffff" opacity="0.85"/>
+</svg>

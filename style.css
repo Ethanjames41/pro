@@ -1,0 +1,470 @@
+* {
+    text-decoration: none; padding: 0; margin: 0;
+}
+
+.navbar {
+    background: crimson; font-family: calibri; padding-right: 15px; padding-left: 15px;
+}
+
+.navdiv {
+    display: flex; align-items: center; justify-content: space-between;
+}
+
+.logo {
+    border: 3px solid black; padding: 10px; width: 100px; background-color: rgb(0, 0, 0);
+    box-shadow: 5px 5px 5px;
+}
+
+.logo a {
+    color: aliceblue; font-size: 16px;
+}
+
+li {
+    list-style: none; display: inline-block;
+}
+
+li a {
+    color: aliceblue; font-size: 18px; font-weight: bold; margin-right: 25px; border-right: 2px solid black;
+    border-left: 2px solid black; background-color: rgb(8, 9, 9); box-shadow: 5px 5px 5px black;
+}
+
+.banner-container {
+    background-image: url('https://cdn.elebase.io/f73a5e12-7a94-4da0-96b6-40fd97435fd2/dc029a79-d39a-46fb-bfec-d8d05681c881-downtown-maryville.jpg?q=90');
+    background-size: cover; 
+    background-position: center; 
+    height: 200px; 
+    position: relative; 
+    display: flex;
+    align-items: end;
+}
+
+.profile-icon img {
+    width: 150px;  /* Set the size of your icon */
+    height: 150px;
+    
+    /* This is the trick to make it a perfect circle! */
+    border-radius: 50%; 
+    
+    /* This adds the 'Facebook-style' white border */
+    border: 4px solid rgba(83, 81, 74, 0.562); 
+    
+    /* A little shadow to make it pop */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    /* This prevents your image from being stretched or squished */
+    object-fit: cover;
+
+}
+
+.name-container {
+    width: 300px;
+    color: rgb(239, 227, 229);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.543);
+    background-color: rgba(0, 0, 0, 0.648);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    background-color: #222; /* A dark background for the footer */
+    color: aliceblue; /* Light text color to contrast */
+    padding: 20px 0; /* 20px of padding on top/bottom, 0 on left/right */
+    
+    /* We add this top margin to create space below your 
+       overlapping profile icon. 
+       Your icon hangs 50px *below* the banner, so we
+       need *at least* 50px of space + some extra.
+    */
+    margin-top: 70px; 
+}
+
+.footer-content {
+    /* This centers the content and adds space on the sides */
+    width: 90%;
+    max-width: 1200px; /* Ensures content doesn't get too wide on big screens */
+    margin: 0 auto; /* A common trick to center a div */
+
+    /* These will stack the <p> and <ul> on small screens */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-content .social-links {
+    margin-top: 15px; /* Adds space above the links */
+}
+
+/* This is your <ul> tag inside the footer */
+.social-links li {
+    display: inline-block; /* Makes them sit side-by-side */
+    margin: 0 10px; /* Adds 10px of space between each link */
+}
+
+/* This targets the <a> tags inside your social-links list */
+.social-links li a {
+    color: aliceblue; /* Makes link text light */
+    font-size: 16px; /* A good readable size */
+    font-weight: normal; /* Resets the bold from your navbar */
+
+    /* We are resetting all the border/background/shadow 
+       styles you used in your navbar links
+    */
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+    margin-right: 0; /* Resetting the navbar margin */
+}
+
+/* Adds a simple underline effect on hover */
+.social-links li a:hover {
+    text-decoration: underline;
+}
+
+/* --- This is a simple "Media Query" for responsiveness ---
+   It means "if the screen is at least 768px wide (like a tablet), 
+   apply these *different* styles."
+*/
+@media (min-width: 768px) {
+    .footer-content {
+        /* Change from a column to a row on bigger screens */
+        flex-direction: row; 
+        
+        /* This pushes the copyright to the left 
+           and the social links to the right 
+        */
+        justify-content: space-between; 
+    }
+
+    .footer-content .social-links {
+        margin-top: 0; /* Remove the top margin on big screens */
+    }
+}
+
+
+
+.modal-overlay {
+  display: none; /* hidden by default */
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+
+
+.form-container {
+  width: 100%;
+  max-width: 800px;
+  background: rgb(236, 236, 236);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+              rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+              rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  padding: 30px;
+  border-radius: 10px;
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#ethan {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  background: white;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+.form-submit-btn {
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-submit-btn:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+
+
+
+
+.btn-sand {
+    width: 130px;
+    height: 36px;
+    margin-bottom: 3px;
+    background-color: #222;
+    color: aliceblue;
+    box-shadow: 3px 3px crimson ;
+    border: 1px solid gold;
+    cursor: pointer;
+}
+
+.btn-sand:hover {
+    background-color: #636262;
+    box-shadow: 3px 3px 3px crimson;
+}
+
+.close-btn {
+    float: right;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+
+
+
+
+
+
+
+
+  /* ---------------------------------------
+   📱 Responsive Design for Tablets & Mobile
+   --------------------------------------- */
+
+/* For screens smaller than 1024px (tablets, landscape phones) */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 10px;
+  }
+
+  .navdiv {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navdiv ul {
+    margin-top: 10px;
+  }
+
+  li a {
+    font-size: 16px;
+    margin-right: 15px;
+    border: none;
+    box-shadow: none;
+    background: none;
+  }
+
+  .banner-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    text-align: center;
+  }
+
+  .profile-icon img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .name-container {
+    width: auto;
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+  }
+
+  .btn-sand {
+    margin-top: 15px;
+    width: 200px;
+  }
+
+  .form-container {
+    width: 90%;
+    max-width: 600px;
+  }
+
+  input, textarea {
+    font-size: 14px;
+  }
+}
+
+/* For screens smaller than 768px (portrait tablets & large phones) */
+@media (max-width: 768px) {
+  .navbar {
+    text-align: center;
+  }
+
+  .navdiv ul {
+    display: block;
+    padding: 0;
+  }
+
+  li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  li a {
+    display: inline-block;
+    padding: 8px 12px;
+    border: none;
+    font-size: 15px;
+  }
+
+  .banner-container {
+    height: auto;
+    padding: 30px 0;
+  }
+
+  .profile-icon img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .name-container h1 {
+    font-size: 22px;
+  }
+  
+  #btn-sand {
+    width: 130px;
+  }
+
+  .form-container {
+    padding: 20px;
+  }
+
+  #ethan {
+    font-size: 20px;
+  }
+
+  .form-group label {
+    font-size: 14px;
+  }
+
+  .form-submit-btn,
+  .btn-sand {
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+  }
+
+  footer {
+    margin-top: 40px;
+    padding: 15px 0;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .social-links li {
+    margin: 5px;
+  }
+}
+
+/* For screens smaller than 480px (phones) */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .logo a {
+    font-size: 14px;
+  }
+
+  .banner-container {
+    padding: 20px;
+  }
+
+  .profile-icon img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .name-container h1 {
+    font-size: 18px;
+  }
+
+  .form-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  input,
+  textarea {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .btn-sand,
+  .form-submit-btn {
+    height: 38px;
+    font-size: 14px;
+  }
+
+  #ethan {
+    font-size: 18px;
+  }
+
+  .close-btn {
+    font-size: 18px;
+  }
+
+  footer {
+    font-size: 13px;
+  }
+
+  .footer-content p {
+    margin-bottom: 10px;
+  }
+}
