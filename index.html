@@ -5,74 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <title>Walker's Portofolio</title>
+    <title>Ethan James Walker - Portfolio</title>
 </head>
 <body>
-    <div class="navbar">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
         <div class="navdiv">
-            <div class="logo"><a href="index.html">Ethan James W</a></div>
+            <div class="logo">
+                <a href="index.html">Ethan James W</a>
+            </div>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
         </div>
-    </div>
+    </nav>
 
-    <div class="banner-container">
+    <!-- Banner Section with Profile -->
+    <section class="banner-container">
         <div class="profile-icon">
-            <img src="image1.jpeg" alt="profile image">
+            <img src="image1.jpeg" alt="Ethan James Walker Profile Picture">
         </div>
         <div class="name-container">
             <h1 class="name">Ethan James Walker</h1>
         </div>
         <button class="btn-sand" id="btn-sand">Send a Message</button>
+    </section>
+
+    <!-- Sub Navigation Links -->
+    <div id="sub-div">
+        <div id="sub-link">
+            <a href="#certifications">Certifications</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+        </div>
     </div>
 
-    
+    <!-- Contact Form Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="form-container" id="form-container">
+            <form class="form" id="contactForm">
+                <button type="button" class="close-btn" id="closeModalBtn">&times;</button>
+                <h1 id="ethan">Send a message to Ethan James Walker</h1>
 
-<!-- Popup modal -->
-<div class="modal-overlay" id="modalOverlay">
-  <div class="form-container" id="form-container">
-    <form class="form">
-      <button class="close-btn" id="closeModalBtn">&times;</button>
-      <h1 id="ethan"></h1>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="from_name" required>
+                </div>
 
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="text" id="email" name="email" required>
-      </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="from_email" required>
+                </div>
 
-      <div class="form-group">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" required>
-      </div>
+                <div class="form-group">
+                    <label for="textarea">Message</label>
+                    <textarea name="message" id="textarea" rows="6" required></textarea>
+                </div>
 
-      <div class="form-group">
-        <label for="textarea">Message</label>
-        <textarea name="textarea" id="textarea" rows="6" required></textarea>
-      </div>
+                <button id="mysubmit" class="form-submit-btn" type="submit">Submit</button>
 
-      <button class="btn-sand" type="submit">Submit</button>
-    </form>
-  </div>
-</div>
+                <!-- Loading Animation -->
+                <div id="loding" style="display: none;">
+                    <h1 id="userName"></h1>
+                    <p id="notif">Your message is being sent...</p>
+                    <div class="honeycomb-container">
+                        <div class="honeycomb">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 
-
-
-
-
-
+    <!-- Footer -->
     <footer>
-    <div class="footer-content">
-        <p>&copy; 2025 Ethan James Walker. All rights reserved.</p>
-        <ul class="social-links">
-            <li><a href="#">LinkedIn</a></li>
-            <li><a href="#">GitHub</a></li>
-            <li><a href="#">Twitter</a></li>
-        </ul>
-    </div>
-</footer>
-<script src="main.js"></script>
+        <div class="footer-content">
+            <p>&copy; 2025 Ethan James Walker. All rights reserved.</p>
+            <ul class="social-links">
+                <li><a href="https://www.linkedin.com/in/ethan-james-walker-9005892a9" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                <li><a href="#" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a href="#" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

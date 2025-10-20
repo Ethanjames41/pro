@@ -1,470 +1,658 @@
+/* ===============================================
+   RESET & BASE STYLES
+   =============================================== */
 * {
-    text-decoration: none; padding: 0; margin: 0;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: 'Calibri', sans-serif;
+    line-height: 1.6;
+}
+
+/* ===============================================
+   NAVIGATION BAR
+   =============================================== */
 .navbar {
-    background: crimson; font-family: calibri; padding-right: 15px; padding-left: 15px;
+    background: crimson;
+    padding: 15px;
+    height: 60px;
 }
 
 .navdiv {
-    display: flex; align-items: center; justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .logo {
-    border: 3px solid black; padding: 10px; width: 100px; background-color: rgb(0, 0, 0);
-    box-shadow: 5px 5px 5px;
+    border: 3px solid black;
+    padding: 10px;
+    width: 130px;
+    background-color: #000;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .logo a {
-    color: aliceblue; font-size: 16px;
+    color: aliceblue;
+    font-size: 16px;
+}
+
+.navdiv ul {
+    display: flex;
+    gap: 10px;
 }
 
 li {
-    list-style: none; display: inline-block;
+    list-style: none;
 }
 
 li a {
-    color: aliceblue; font-size: 18px; font-weight: bold; margin-right: 25px; border-right: 2px solid black;
-    border-left: 2px solid black; background-color: rgb(8, 9, 9); box-shadow: 5px 5px 5px black;
+    color: aliceblue;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+    background-color: rgb(8, 9, 9);
+    box-shadow: 5px 5px 5px black;
+    display: inline-block;
+    transition: all 0.3s ease;
 }
 
+li a:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+/* ===============================================
+   BANNER & PROFILE SECTION
+   =============================================== */
 .banner-container {
     background-image: url('https://cdn.elebase.io/f73a5e12-7a94-4da0-96b6-40fd97435fd2/dc029a79-d39a-46fb-bfec-d8d05681c881-downtown-maryville.jpg?q=90');
-    background-size: cover; 
-    background-position: center; 
-    height: 200px; 
-    position: relative; 
-    display: flex;
-    align-items: end;
-}
-
-.profile-icon img {
-    width: 150px;  /* Set the size of your icon */
-    height: 150px;
-    
-    /* This is the trick to make it a perfect circle! */
-    border-radius: 50%; 
-    
-    /* This adds the 'Facebook-style' white border */
-    border: 4px solid rgba(83, 81, 74, 0.562); 
-    
-    /* A little shadow to make it pop */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-
-    /* This prevents your image from being stretched or squished */
-    object-fit: cover;
-
-}
-
-.name-container {
-    width: 300px;
-    color: rgb(239, 227, 229);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.543);
-    background-color: rgba(0, 0, 0, 0.648);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-footer {
-    background-color: #222; /* A dark background for the footer */
-    color: aliceblue; /* Light text color to contrast */
-    padding: 20px 0; /* 20px of padding on top/bottom, 0 on left/right */
-    
-    /* We add this top margin to create space below your 
-       overlapping profile icon. 
-       Your icon hangs 50px *below* the banner, so we
-       need *at least* 50px of space + some extra.
-    */
-    margin-top: 70px; 
-}
-
-.footer-content {
-    /* This centers the content and adds space on the sides */
-    width: 90%;
-    max-width: 1200px; /* Ensures content doesn't get too wide on big screens */
-    margin: 0 auto; /* A common trick to center a div */
-
-    /* These will stack the <p> and <ul> on small screens */
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.profile-icon img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid rgba(83, 81, 74, 0.562);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.profile-icon img:hover {
+    transform: scale(1.05);
+}
+
+.name-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: rgb(239, 227, 229);
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.543);
     text-align: center;
 }
 
-.footer-content .social-links {
-    margin-top: 15px; /* Adds space above the links */
+.name-container h1 {
+    font-size: 28px;
+    margin: 0;
 }
 
-/* This is your <ul> tag inside the footer */
-.social-links li {
-    display: inline-block; /* Makes them sit side-by-side */
-    margin: 0 10px; /* Adds 10px of space between each link */
-}
-
-/* This targets the <a> tags inside your social-links list */
-.social-links li a {
-    color: aliceblue; /* Makes link text light */
-    font-size: 16px; /* A good readable size */
-    font-weight: normal; /* Resets the bold from your navbar */
-
-    /* We are resetting all the border/background/shadow 
-       styles you used in your navbar links
-    */
-    border: none;
-    background-color: transparent;
-    box-shadow: none;
-    margin-right: 0; /* Resetting the navbar margin */
-}
-
-/* Adds a simple underline effect on hover */
-.social-links li a:hover {
-    text-decoration: underline;
-}
-
-/* --- This is a simple "Media Query" for responsiveness ---
-   It means "if the screen is at least 768px wide (like a tablet), 
-   apply these *different* styles."
-*/
-@media (min-width: 768px) {
-    .footer-content {
-        /* Change from a column to a row on bigger screens */
-        flex-direction: row; 
-        
-        /* This pushes the copyright to the left 
-           and the social links to the right 
-        */
-        justify-content: space-between; 
-    }
-
-    .footer-content .social-links {
-        margin-top: 0; /* Remove the top margin on big screens */
-    }
-}
-
-
-
-.modal-overlay {
-  display: none; /* hidden by default */
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-
-
-.form-container {
-  width: 100%;
-  max-width: 800px;
-  background: rgb(236, 236, 236);
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-              rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
-              rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  padding: 30px;
-  border-radius: 10px;
-  margin: 50px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.form {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-#ethan {
-  text-align: center;
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 15px;
-}
-
-label {
-  font-weight: bold;
-  margin-bottom: 6px;
-  color: #555;
-}
-
-input, textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 15px;
-  background: white;
-}
-
-input:focus,
-textarea:focus {
-  outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
-}
-
-.form-submit-btn {
-  background-color: #007bff;
-  color: white;
-  font-size: 16px;
-  padding: 10px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.form-submit-btn:hover {
-  background-color: #0056b3;
-}
-
-
-
-
-
-
-
-
+/* ===============================================
+   BUTTONS
+   =============================================== */
 .btn-sand {
-    width: 130px;
-    height: 36px;
-    margin-bottom: 3px;
+    width: 150px;
+    height: 40px;
     background-color: #222;
     color: aliceblue;
-    box-shadow: 3px 3px crimson ;
-    border: 1px solid gold;
+    box-shadow: 3px 3px crimson;
+    border: 2px solid gold;
     cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 
 .btn-sand:hover {
     background-color: #636262;
-    box-shadow: 3px 3px 3px crimson;
+    box-shadow: 5px 5px 5px crimson;
+    transform: translateY(-2px);
+}
+
+/* ===============================================
+   SUB NAVIGATION (if needed)
+   =============================================== */
+#sub-div {
+    padding: 20px;
+    text-align: center;
+    background-color: black;
+    height: 50px;
+}
+
+#sub-link {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#sub-link a {
+    color: #333;
+    padding: 10px 20px;
+    background: #f0f0f0;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    border: 2px solid crimson;
+}
+
+#sub-link a:hover {
+    background: crimson;
+    color: white;
+}
+
+/* ===============================================
+   MODAL OVERLAY
+   =============================================== */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ===============================================
+   CONTACT FORM
+   =============================================== */
+.form-container {
+    width: 90%;
+    max-width: 600px;
+    background: rgb(236, 236, 236);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+                rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+                rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    padding: 30px;
+    border-radius: 10px;
+    position: relative;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .close-btn {
-    float: right;
-    background: none;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: crimson;
+    color: white;
     border: none;
-    font-size: 20px;
+    font-size: 24px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
     cursor: pointer;
-  }
-
-
-
-
-
-
-
-
-
-  /* ---------------------------------------
-   📱 Responsive Design for Tablets & Mobile
-   --------------------------------------- */
-
-/* For screens smaller than 1024px (tablets, landscape phones) */
-@media (max-width: 1024px) {
-  .navbar {
-    padding: 10px;
-  }
-
-  .navdiv {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .navdiv ul {
-    margin-top: 10px;
-  }
-
-  li a {
-    font-size: 16px;
-    margin-right: 15px;
-    border: none;
-    box-shadow: none;
-    background: none;
-  }
-
-  .banner-container {
-    flex-direction: column;
+    display: flex;
     align-items: center;
     justify-content: center;
-    height: 250px;
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    background: #dc143c;
+    transform: rotate(90deg);
+}
+
+#ethan {
     text-align: center;
-  }
-
-  .profile-icon img {
-    width: 120px;
-    height: 120px;
-  }
-
-  .name-container {
-    width: auto;
+    font-size: 24px;
+    margin-bottom: 20px;
     margin-top: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-  }
-
-  .btn-sand {
-    margin-top: 15px;
-    width: 200px;
-  }
-
-  .form-container {
-    width: 90%;
-    max-width: 600px;
-  }
-
-  input, textarea {
-    font-size: 14px;
-  }
+    color: #333;
 }
 
-/* For screens smaller than 768px (portrait tablets & large phones) */
-@media (max-width: 768px) {
-  .navbar {
-    text-align: center;
-  }
-
-  .navdiv ul {
-    display: block;
-    padding: 0;
-  }
-
-  li {
-    display: block;
-    margin: 10px 0;
-  }
-
-  li a {
-    display: inline-block;
-    padding: 8px 12px;
-    border: none;
-    font-size: 15px;
-  }
-
-  .banner-container {
-    height: auto;
-    padding: 30px 0;
-  }
-
-  .profile-icon img {
-    width: 100px;
-    height: 100px;
-  }
-
-  .name-container h1 {
-    font-size: 22px;
-  }
-  
-  #btn-sand {
-    width: 130px;
-  }
-
-  .form-container {
-    padding: 20px;
-  }
-
-  #ethan {
-    font-size: 20px;
-  }
-
-  .form-group label {
-    font-size: 14px;
-  }
-
-  .form-submit-btn,
-  .btn-sand {
-    width: 100%;
-    height: 40px;
-    font-size: 15px;
-  }
-
-  footer {
-    margin-top: 40px;
-    padding: 15px 0;
-  }
-
-  .footer-content {
+.form-group {
+    display: flex;
     flex-direction: column;
-    text-align: center;
-  }
-
-  .social-links li {
-    margin: 5px;
-  }
+    margin-bottom: 15px;
 }
 
-/* For screens smaller than 480px (phones) */
-@media (max-width: 480px) {
-  body {
-    font-size: 14px;
-  }
+label {
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #555;
+}
 
-  .logo a {
-    font-size: 14px;
-  }
+input,
+textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    background: white;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
 
-  .banner-container {
-    padding: 20px;
-  }
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: crimson;
+    box-shadow: 0 0 8px rgba(220, 20, 60, 0.3);
+}
 
-  .profile-icon img {
-    width: 90px;
-    height: 90px;
-  }
+.form-submit-btn {
+    background-color: crimson;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
 
-  .name-container h1 {
-    font-size: 18px;
-  }
+.form-submit-btn:hover {
+    background-color: #dc143c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-  .form-container {
-    width: 95%;
-    padding: 15px;
-  }
+/* ===============================================
+   LOADING ANIMATION
+   =============================================== */
+#loding {
+    display: none;
+    text-align: center;
+    padding: 30px 20px;
+    background: white;
+    border-radius: 8px;
+    margin-top: 20px;
+    border: 2px solid crimson;
+    animation: fadeIn 0.3s ease;
+}
 
-  input,
-  textarea {
-    font-size: 13px;
-    padding: 8px;
-  }
-
-  .btn-sand,
-  .form-submit-btn {
-    height: 38px;
-    font-size: 14px;
-  }
-
-  #ethan {
-    font-size: 18px;
-  }
-
-  .close-btn {
-    font-size: 18px;
-  }
-
-  footer {
-    font-size: 13px;
-  }
-
-  .footer-content p {
+#userName {
+    font-size: 22px;
+    color: #333;
     margin-bottom: 10px;
-  }
+}
+
+#loding p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.honeycomb-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.honeycomb {
+    height: 24px;
+    position: relative;
+    width: 24px;
+}
+
+.honeycomb div {
+    animation: honeycomb 2.1s infinite backwards;
+    background: crimson;
+    height: 12px;
+    margin-top: 6px;
+    position: absolute;
+    width: 24px;
+}
+
+.honeycomb div:after,
+.honeycomb div:before {
+    content: '';
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.honeycomb div:after {
+    top: -6px;
+    border-bottom: 6px solid crimson;
+}
+
+.honeycomb div:before {
+    bottom: -6px;
+    border-top: 6px solid crimson;
+}
+
+.honeycomb div:nth-child(1) {
+    animation-delay: 0s;
+    left: -28px;
+    top: 0;
+}
+
+.honeycomb div:nth-child(2) {
+    animation-delay: 0.1s;
+    left: -14px;
+    top: 22px;
+}
+
+.honeycomb div:nth-child(3) {
+    animation-delay: 0.2s;
+    left: 14px;
+    top: 22px;
+}
+
+.honeycomb div:nth-child(4) {
+    animation-delay: 0.3s;
+    left: 28px;
+    top: 0;
+}
+
+.honeycomb div:nth-child(5) {
+    animation-delay: 0.4s;
+    left: 14px;
+    top: -22px;
+}
+
+.honeycomb div:nth-child(6) {
+    animation-delay: 0.5s;
+    left: -14px;
+    top: -22px;
+}
+
+.honeycomb div:nth-child(7) {
+    animation-delay: 0.6s;
+    left: 0;
+    top: 0;
+}
+
+@keyframes honeycomb {
+    0%, 20%, 80%, 100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    30%, 70% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ===============================================
+   FOOTER
+   =============================================== */
+footer {
+    background-color: #222;
+    color: aliceblue;
+    padding: 30px 0;
+    margin-top: 50px;
+}
+
+.footer-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+}
+
+.footer-content p {
+    margin: 0;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.social-links li {
+    list-style: none;
+}
+
+.social-links li a {
+    color: aliceblue;
+    font-size: 16px;
+    font-weight: normal;
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.social-links li a:hover {
+    color: crimson;
+    text-decoration: underline;
+}
+
+/* ===============================================
+   RESPONSIVE DESIGN
+   =============================================== */
+
+/* Tablets & Landscape Phones (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .navdiv {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navdiv ul {
+        margin-top: 0;
+    }
+
+    li a {
+        font-size: 16px;
+        padding: 6px 12px;
+    }
+
+    .banner-container {
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    .profile-icon img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .name-container h1 {
+        font-size: 24px;
+    }
+
+    .form-container {
+        width: 85%;
+        padding: 25px;
+    }
+}
+
+/* Portrait Tablets & Large Phones (max-width: 768px) */
+@media (max-width: 768px) {
+    .navdiv ul {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    li a {
+        font-size: 15px;
+        width: 150px;
+        text-align: center;
+    }
+
+    .banner-container {
+        padding: 30px 15px;
+    }
+
+    .profile-icon img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .name-container h1 {
+        font-size: 22px;
+    }
+
+    .btn-sand {
+        width: 180px;
+    }
+
+    .form-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    #ethan {
+        font-size: 20px;
+    }
+
+    .form-submit-btn,
+    .btn-sand {
+        width: 100%;
+        height: 42px;
+    }
+
+    footer {
+        padding: 20px 0;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+/* Small Phones (max-width: 480px) */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
+    .logo a {
+        font-size: 14px;
+    }
+
+    .banner-container {
+        padding: 20px 10px;
+    }
+
+    .profile-icon img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .name-container h1 {
+        font-size: 18px;
+    }
+
+    .form-container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    input,
+    textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    #ethan {
+        font-size: 18px;
+    }
+
+    .close-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+    }
+
+    footer {
+        font-size: 13px;
+    }
+
+    .social-links {
+        gap: 15px;
+    }
+
+    .social-links li a {
+        font-size: 14px;
+    }
+
+    #loding {
+        padding: 20px 10px;
+    }
+
+    #userName {
+        font-size: 18px;
+    }
+
+    #loding p {
+        font-size: 16px;
+    }
+}
+
+/* Large Desktop (min-width: 768px) - Footer adjustment */
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
